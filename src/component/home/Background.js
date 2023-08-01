@@ -12,7 +12,11 @@ const Background = () => {
     const moveY = (mouseY - centerY) * 0.01;
 
     const background = document.querySelector(".background");
-    background.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    if (window.innerWidth >= 768) {
+      background.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    } else {
+      background.style.transform = "none";
+    }
   };
 
   React.useEffect(() => {
